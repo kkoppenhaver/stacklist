@@ -1,4 +1,4 @@
-/Applications/MAMP/htdocs/stacklist/platforms/android/gen/com/phonegap/helloworld/R.java \
+/Applications/MAMP/htdocs/stacklist/platforms/android/gen/com/koppenhaver/stacklist/R.java \
  : /Applications/MAMP/htdocs/stacklist/platforms/android/res/drawable/icon.png \
 /Applications/MAMP/htdocs/stacklist/platforms/android/res/drawable-hdpi/icon.png \
 /Applications/MAMP/htdocs/stacklist/platforms/android/res/drawable-ldpi/icon.png \
