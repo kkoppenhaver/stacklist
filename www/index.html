@@ -28,8 +28,8 @@
     </head>
     <body>
         
-        <div id="task">
-            You can even create super long task names.
+        <div id="task-wrapper">
+            <div id="0" class="task"></div>
         </div>
 
         <div id="done">Done</div>
@@ -49,7 +49,7 @@
                 window.stack_pointer = 0;
                 window.localStorage.setItem(0, "Your stack is empty!");
 
-                $('#task').html("Your stack is empty!");
+                $('#0').html("Your stack is empty!");
 
                 $('#done').click( function() {
 
@@ -67,7 +67,12 @@
                         var item = window.localStorage.getItem(window.stack_pointer);
 
                         //Update the display
-                        $('#task').html(item);
+                        $('#'+(window.stack_pointer+1).toString()).fadeOut( function () { 
+                            $('#'+(window.stack_pointer+1).toString()).remove();
+                        });
+
+
+                        $('#'+(window.stack_pointer).toString()).html(item).slideDown();
                     }
 
                     else {
@@ -88,7 +93,10 @@
                     window.localStorage.setItem(window.stack_pointer, item);
 
                     //Update the display
-                    $('#task').html(item);
+                    $("<div id='"+window.stack_pointer+"' class='task'></div>").appendTo($('#task-wrapper'));
+                    $("#"+window.stack_pointer).html(item);
+                    $("#"+(window.stack_pointer-1).toString()).slideUp();
+                    //alert("#"+(window.stack_pointer-1).toString());
                 });
             });
         </script>

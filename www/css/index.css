@@ -119,13 +119,16 @@ body {
 }
 
 
-#done, #add {
+#done, #add, .task {
     width: 100%;
-    position: fixed;
     height: 150px;
     text-align: center;
     line-height: 150px;
     font-size: 30px;
+}
+
+#done, #add {
+    position: fixed;
 }
 
 #done {
@@ -140,8 +143,7 @@ body {
     color: white;
 }
 
-#task {
-    font-size: 60px;
-    text-align: center;
-    padding-top: 30px;
+.task {
+    font-size:          60px;
+    background-color:   #336699;
 }
