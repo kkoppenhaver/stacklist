@@ -34,6 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -48,10 +49,11 @@ var app = {
     },
     //Write an event to the database
     dbWrite: function() {
-        alert('Task added.');
+        
     },
     //Pop an event
     dbPop: function() {
-        alert('Task completed.')
-    }
+        
+    },
+
 };

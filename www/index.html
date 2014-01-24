@@ -42,11 +42,53 @@
             app.initialize();
 
             $(document).ready( function() {
+            
+                //Create a new stack
+                window.localStorage.clear();
+
+                window.stack_pointer = 0;
+                window.localStorage.setItem(0, "Your stack is empty!");
+
+                $('#task').html("Your stack is empty!");
+
                 $('#done').click( function() {
-                    app.dbPop();
+
+                    // Pop the top of the stack
+                    window.localStorage.removeItem(window.stack_pointer);
+                    
+                    if (window.stack_pointer != 0) {
+                        //Remove the item
+                        window.localStorage.removeItem(window.stack_pointer);
+
+                        //Decrement the stack pointer
+                        window.stack_pointer--;
+
+                        //Grab the new top of the stack
+                        var item = window.localStorage.getItem(window.stack_pointer);
+
+                        //Update the display
+                        $('#task').html(item);
+                    }
+
+                    else {
+                        alert("Your stack is already empty!");
+                        window.localStorage.setItem(0, "Your stack is empty!");
+                    }
+
                 });
                 $('#add').click( function() {
-                    app.dbWrite();
+
+                    //Increment the stack pointer
+                    window.stack_pointer++;
+
+                    //Get the item from the user
+                    var item = prompt("Enter an item:", "");
+
+                    //Push the item onto the stack
+                    window.localStorage.setItem(window.stack_pointer, item);
+
+                    //Update the display
+                    $('#task').html(item);
                 });
             });
         </script>
